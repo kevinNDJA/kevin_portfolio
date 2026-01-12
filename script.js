@@ -1,6 +1,6 @@
 // Typing effect
 const typingText = document.querySelector('.typing-text span');
-const words = ['Web Developer', 'Software Engineer', 'Designer', 'Freelancer'];
+const words = ['Designer Graphique', 'Étudiant-Professeur', 'Créateur d\'Affiches', 'Éducateur'];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
