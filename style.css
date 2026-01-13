@@ -212,6 +212,54 @@ font-weight: 700;
     box-shadow: 0.25px #b74b4b;
 
 }
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    max-width: 280px;
+}
+.typing-text span{
+    position: relative;
+}
+.typing-text span::before{
+    content: 'software developer';
+    color: #b74b4b;
+    animation: words 20s infinite;
+}
+.typing-text span::after{
+    content: '';
+    border-color: #000000;
+    position: absolute;
+    width: calc(100%+8px);
+    height: 100%;
+    border-left: 3px solid #000;
+    right: -8;
+    animation: cursor 06s inherit;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #000;
+    }
+
+}
+@keyframes words{
+   0%, 20%{
+   content: 'web developer';
+   }
+   21%, 40%{
+    content: 'software developer';
+   }
+   41%, 60%{
+       content: 'web designer';
+   }
+   61%, 80%{
+    content: 'youtuber';
+   }
+   81%, 100%{
+    content: 'script writer';
+   }
+
+}
 
 /* General section styles */
 .heading {

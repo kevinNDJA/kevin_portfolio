@@ -1,4 +1,4 @@
-// Typing effect removed
+// Typing effect with CSS
 
 // Mobile nav toggle
 const nav = document.querySelector('nav');
