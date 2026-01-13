@@ -1,6 +1,6 @@
 // Typing effect
 const typingText = document.querySelector('.typing-text span');
-const words = ['Designer Graphique', 'Étudiant-Professeur', 'Créateur d\'Affiches', 'Éducateur'];
+const words = ['Designer Graphique', 'Étudiant-Professeur', 'Créateur d\'Affiches', 'Éducateur', 'Développeur Web'];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -17,13 +17,13 @@ function typeWriter() {
 
     if (!isDeleting && charIndex === currentWord.length) {
         isDeleting = true;
-        setTimeout(typeWriter, 2000);
+        setTimeout(typeWriter, 1500);
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(typeWriter, 500);
+        setTimeout(typeWriter, 300);
     } else {
-        setTimeout(typeWriter, isDeleting ? 100 : 200);
+        setTimeout(typeWriter, isDeleting ? 50 : 150);
     }
 }
 
