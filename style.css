@@ -239,9 +239,17 @@ font-weight: 700;
 
 .btn-container {
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 1rem;
     align-items: center;
     margin-top: 2rem;
+}
+
+.cv-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn-secondary {
@@ -441,4 +449,16 @@ footer {
 .close:hover,
 .close:focus {
     color: #bbb;
+}
+
+/* Responsive CV buttons */
+@media (max-width: 768px) {
+    .cv-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn-container {
+        gap: 1.5rem;
+    }
 }
