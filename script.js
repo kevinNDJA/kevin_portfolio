@@ -1,33 +1,4 @@
-// Typing effect
-const typingText = document.querySelector('.typing-text span');
-const words = ['Designer Graphique', 'Étudiant-Professeur', 'Créateur d\'Affiches', 'Éducateur', 'Développeur Web'];
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function typeWriter() {
-    const currentWord = words[wordIndex];
-    if (isDeleting) {
-        typingText.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typingText.textContent = currentWord.substring(0, charIndex + 1);
-        charIndex++;
-    }
-
-    if (!isDeleting && charIndex === currentWord.length) {
-        isDeleting = true;
-        setTimeout(typeWriter, 1500);
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(typeWriter, 300);
-    } else {
-        setTimeout(typeWriter, isDeleting ? 50 : 150);
-    }
-}
-
-typeWriter();
+// Typing effect removed
 
 // Mobile nav toggle
 const nav = document.querySelector('nav');
