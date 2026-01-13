@@ -41,3 +41,36 @@ modal.addEventListener('click', function(e) {
         modal.style.display = 'none';
     }
 });
+
+// Form submission
+const contactForm = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    
+    fetch('https://formspree.io/f/xrbooree', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            formMessage.textContent = 'Votre message a été envoyé avec succès !';
+            formMessage.style.display = 'block';
+            formMessage.style.color = '#b74b4b';
+            contactForm.reset();
+        } else {
+            throw new Error('Erreur lors de l\'envoi');
+        }
+    })
+    .catch(error => {
+        formMessage.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer.';
+        formMessage.style.display = 'block';
+        formMessage.style.color = 'red';
+    });
+});
