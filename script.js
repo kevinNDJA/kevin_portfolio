@@ -6,6 +6,7 @@ const hamburger = document.querySelector('.hamburger');
 
 hamburger.addEventListener('click', () => {
     nav.classList.toggle('active');
+    hamburger.classList.toggle('active');
 });
 
 // Smooth scrolling
@@ -17,6 +18,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
             behavior: 'smooth'
         });
         nav.classList.remove('active'); // Close mobile nav after click
+        hamburger.classList.remove('active'); // Close hamburger
     });
 });
 

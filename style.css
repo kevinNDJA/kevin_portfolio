@@ -58,6 +58,18 @@ header{
     margin: 3px 0;
     transition: 0.3s;
 }
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
 .logohover{
     transform: scale(1.1);
 }
@@ -88,30 +100,33 @@ nav a.active{
     nav{
         position: absolute;
         top: 100%;
-        right: 0;
-        width: 40%;
-        border-left: 3px solid #b74b4b;
-        border-bottom: 3px solid #b74b4b;
-        border-bottom-left-radius: 2rem;
-        padding: 1rem solid;
+        left: 0;
+        width: 100%;
         background-color: #161616;
-        border-top: 0.1rem solid rgba(0,0,0,0,1);
+        border-top: 3px solid #b74b4b;
+        padding: 2rem;
         display: none;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
     }
     nav.active{
         display: block;
+        opacity: 1;
+        transform: translateY(0);
     }
     nav a{
         display: block;
         font-size: 2rem;
-        margin: 3rem 0;
-
+        margin: 2rem 0;
+        text-align: center;
     }
     nav a:hover,
     nav a.active{
         padding: 1rem;
         border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #b74b4b;
+        background-color: #b74b4b;
+        color: black;
     }
   
 }
