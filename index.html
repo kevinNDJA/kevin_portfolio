@@ -33,17 +33,30 @@
             <span></span>
         </div>
         <a href="#" class="logo">
-            <svg width="80" height="40" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+            <svg width="90" height="45" viewBox="0 0 140 70" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" style="stop-color:#b74b4b;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#e74c3c;stop-opacity:1" />
                         <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
                     </linearGradient>
+                    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#f8f9fa;stop-opacity:1" />
+                    </linearGradient>
+                    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#b74b4b" flood-opacity="0.3"/>
+                    </filter>
                 </defs>
-                <circle cx="30" cy="30" r="25" fill="url(#logoGradient)" opacity="0.1"/>
-                <text x="30" y="38" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="url(#logoGradient)" text-anchor="middle">NBK</text>
-                <circle cx="30" cy="30" r="20" fill="none" stroke="url(#logoGradient)" stroke-width="1" opacity="0.3"/>
-                <circle cx="30" cy="30" r="15" fill="none" stroke="url(#logoGradient)" stroke-width="0.5" opacity="0.2"/>
+                <rect x="5" y="5" width="130" height="60" rx="30" ry="30" fill="url(#logoGradient)" opacity="0.1"/>
+                <rect x="8" y="8" width="124" height="54" rx="27" ry="27" fill="none" stroke="url(#logoGradient)" stroke-width="1" opacity="0.3"/>
+                <circle cx="35" cy="35" r="22" fill="none" stroke="url(#logoGradient)" stroke-width="1.5" opacity="0.4"/>
+                <circle cx="35" cy="35" r="18" fill="none" stroke="url(#logoGradient)" stroke-width="1" opacity="0.6"/>
+                <circle cx="35" cy="35" r="14" fill="none" stroke="url(#logoGradient)" stroke-width="0.5" opacity="0.8"/>
+                <path d="M50 20 L50 50 M50 20 L58 35 L66 20 M66 20 L66 50" stroke="url(#textGradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M72 20 L72 50 L80 50 L82 47 L80 44 L72 44 M80 44 L82 41 L80 38 L72 38" stroke="url(#textGradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M88 20 L88 50 M88 35 L96 50 M88 35 L96 20" stroke="url(#textGradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <circle cx="105" cy="25" r="3" fill="url(#logoGradient)"/>
             </svg>
         </a>
 
@@ -74,7 +87,12 @@
                 <a href="https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://github.com/repos"><i class="fa-brands fa-github"></i></a>
             </div>
-            <a href="#" class="btn">Hire me</a>
+            <div class="btn-container">
+                <a href="#" class="btn">Hire me</a>
+                <a href="cv-kevin.html" class="btn btn-secondary" download="CV_Kevin_NDJA_Baham.html">
+                    <i class="fas fa-download"></i> Télécharger CV
+                </a>
+            </div>
         </div>gi
     </section>
 

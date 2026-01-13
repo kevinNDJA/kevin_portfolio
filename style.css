@@ -45,8 +45,8 @@ header{
 }
 
 .logo svg {
-    width: 80px;
-    height: 40px;
+    width: 90px;
+    height: 45px;
     transition: 0.3s ease;
 }
 
@@ -236,6 +236,25 @@ font-weight: 700;
     box-shadow: 0.25px #b74b4b;
 
 }
+
+.btn-container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.btn-secondary {
+    background-color: transparent !important;
+    border: 2px solid #b74b4b !important;
+    color: #b74b4b !important;
+}
+
+.btn-secondary:hover {
+    background-color: #b74b4b !important;
+    color: white !important;
+}
+
 .typing-text{
     font-size: 34px;
     font-weight: 600;
