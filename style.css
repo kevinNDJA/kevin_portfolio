@@ -38,11 +38,20 @@ header{
 }
 
 .logo{
-    font-size: 3rem;
-    color: #b74b4b;
-    font-weight: 800;
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    transition: 05s ease;
+    transition: 0.3s ease;
+}
+
+.logo svg {
+    width: 80px;
+    height: 40px;
+    transition: 0.3s ease;
+}
+
+.logo:hover svg {
+    transform: scale(1.05);
 }
 
 .hamburger {
