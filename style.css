@@ -237,21 +237,6 @@ font-weight: 700;
 
 }
 
-.btn-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    margin-top: 2rem;
-}
-
-.cv-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .btn-secondary {
     background-color: transparent !important;
     border: 2px solid #b74b4b !important;
