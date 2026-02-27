@@ -118,7 +118,7 @@ if (contactForm && formMessage) {
             formMessage.style.color = '#8add9f';
             contactForm.reset();
         } catch (error) {
-            formMessage.textContent = 'Echec de l\\'envoi. Reessayez dans un instant.';
+            formMessage.textContent = "Echec de l'envoi. Reessayez dans un instant.";
             formMessage.style.display = 'block';
             formMessage.style.color = '#ff8a8a';
         }
