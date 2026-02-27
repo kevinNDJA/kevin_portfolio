@@ -1,78 +1,94 @@
-// Typing effect with CSS
-
-// Mobile nav toggle
 const nav = document.querySelector('nav');
+const navLinks = document.querySelectorAll('nav a');
 const hamburger = document.querySelector('.hamburger');
 
-hamburger.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
+if (hamburger && nav) {
+    hamburger.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', String(!expanded));
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+}
 
-// Smooth scrolling
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+navLinks.forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({
-            behavior: 'smooth'
-        });
-        nav.classList.remove('active'); // Close mobile nav after click
-        hamburger.classList.remove('active'); // Close hamburger
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (!target) {
+            return;
+        }
+
+        target.scrollIntoView({ behavior: 'smooth' });
+        navLinks.forEach((item) => item.classList.remove('active'));
+        anchor.classList.add('active');
+
+        if (nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
     });
 });
 
-// Image modal
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImg');
-const closeBtn = document.getElementsByClassName('close')[0];
+const closeBtn = document.querySelector('.close');
+const zoomableImages = document.querySelectorAll('.zoomable');
 
-document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('click', function() {
+zoomableImages.forEach((img) => {
+    img.addEventListener('click', () => {
+        modalImg.src = img.src;
         modal.style.display = 'flex';
-        modalImg.src = this.src;
+        modal.setAttribute('aria-hidden', 'false');
     });
 });
 
-closeBtn.addEventListener('click', function() {
-    modal.style.display = 'none';
-});
-
-modal.addEventListener('click', function(e) {
-    if (e.target === modal) {
+if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
         modal.style.display = 'none';
-    }
-});
+        modal.setAttribute('aria-hidden', 'true');
+    });
+}
 
-// Form submission
+if (modal) {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+        }
+    });
+}
+
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const formData = new FormData(this);
-    
-    fetch('https://formspree.io/f/xrbooree', {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            formMessage.textContent = 'Votre message a été envoyé avec succès !';
+if (contactForm && formMessage) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch('https://formspree.io/f/xrbooree', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    Accept: 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Echec de la requete');
+            }
+
+            formMessage.textContent = 'Votre message a ete envoye avec succes.';
             formMessage.style.display = 'block';
-            formMessage.style.color = '#b74b4b';
+            formMessage.style.color = '#8add9f';
             contactForm.reset();
-        } else {
-            throw new Error('Erreur lors de l\'envoi');
+        } catch (error) {
+            formMessage.textContent = 'Echec de l\\'envoi. Reessayez dans un instant.';
+            formMessage.style.display = 'block';
+            formMessage.style.color = '#ff8a8a';
         }
-    })
-    .catch(error => {
-        formMessage.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer.';
-        formMessage.style.display = 'block';
-        formMessage.style.color = 'red';
     });
-});
+}

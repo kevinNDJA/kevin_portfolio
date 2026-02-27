@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Kévin - Designer et Éducateur</title>
-    <meta name="description" content="Portfolio de Kévin N’DJA Baham, designer graphique et étudiant en sciences de l'éducation à l'Université de Kara, Togo. Découvrez mes projets en design, enseignement et développement web.">
-    <meta name="keywords" content="Kévin, portfolio, designer graphique, sciences de l'éducation, Togo, Kara, développement web, affiches, enseignement">
-    <meta name="author" content="Kévin N’DJA Baham">
+    <title>Portfolio de Kévin N'DJA Baham | Designer & Éducateur</title>
+    <meta name="description" content="Portfolio de Kévin N'DJA Baham, designer graphique et étudiant en sciences de l'éducation à l'Université de Kara, Togo.">
+    <meta name="keywords" content="Kévin, portfolio, designer graphique, sciences de l'éducation, Togo, Kara, développement web">
+    <meta name="author" content="Kévin N'DJA Baham">
     <meta name="robots" content="index, follow">
-    <!-- Open Graph for social sharing -->
-    <meta property="og:title" content="Portfolio de Kévin - Designer et Éducateur">
-    <meta property="og:description" content="Découvrez le portfolio de Kévin, designer graphique et étudiant en sciences de l'éducation.">
+
+    <meta property="og:title" content="Portfolio de Kévin N'DJA Baham">
+    <meta property="og:description" content="Découvrez mes projets en design, éducation et développement web.">
     <meta property="og:image" content="img.png">
     <meta property="og:url" content="https://kevinndja.github.io/kevin_portfolio/">
     <meta property="og:type" content="website">
+
     <link rel="icon" href="favicon-logo.svg" type="image/svg+xml">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -22,18 +23,17 @@
     <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <a href="#" class="logo">
-            <svg width="90" height="45" viewBox="0 0 140 70" xmlns="http://www.w3.org/2000/svg">
+        <a href="#home" class="logo" aria-label="Accueil">
+            <svg width="90" height="45" viewBox="0 0 140 70" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo KNB">
                 <defs>
                     <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" style="stop-color:#b74b4b;stop-opacity:1" />
@@ -44,15 +44,9 @@
                         <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
                         <stop offset="100%" style="stop-color:#f8f9fa;stop-opacity:1" />
                     </linearGradient>
-                    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-                        <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#b74b4b" flood-opacity="0.3"/>
-                    </filter>
                 </defs>
                 <rect x="5" y="5" width="130" height="60" rx="30" ry="30" fill="url(#logoGradient)" opacity="0.1"/>
                 <rect x="8" y="8" width="124" height="54" rx="27" ry="27" fill="none" stroke="url(#logoGradient)" stroke-width="1" opacity="0.3"/>
-                <circle cx="35" cy="35" r="22" fill="none" stroke="url(#logoGradient)" stroke-width="1.5" opacity="0.4"/>
-                <circle cx="35" cy="35" r="18" fill="none" stroke="url(#logoGradient)" stroke-width="1" opacity="0.6"/>
-                <circle cx="35" cy="35" r="14" fill="none" stroke="url(#logoGradient)" stroke-width="0.5" opacity="0.8"/>
                 <path d="M50 20 L50 50 M50 20 L58 35 L66 20 M66 20 L66 50" stroke="url(#textGradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                 <path d="M72 20 L72 50 L80 50 L82 47 L80 44 L72 44 M80 44 L82 41 L80 38 L72 38" stroke="url(#textGradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                 <path d="M88 20 L88 50 M88 35 L96 50 M88 35 L96 20" stroke="url(#textGradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
@@ -60,181 +54,177 @@
             </svg>
         </a>
 
-        <nav>
-            <a href="#home" class="active">Home</a>
+        <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="site-nav">
+            <a href="#home" class="active">Accueil</a>
             <a href="#services">Services</a>
             <a href="#skills">Compétences</a>
-            <a href="#languages">Langues</a>
             <a href="#projects">Projets</a>
             <a href="#education">Éducation</a>
             <a href="#experience">Expérience</a>
-            <a href="#contact">Contacts</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
-    <section id="home" class="home">
-        <div class="home-img">
-            <img src="img.png" alt="Image de Kévin">
-        </div>
-        <div class="home-content">
-            <h1>Hi, It's <span>Kévin</span></h1>
-            <h3 class="typing-text">I'm <span></span></h3>
-            <p>Passionné par les technologies de l’informatique, je suis actuellement étudiant en sciences de l’éducation à l’Université de Kara au Togo. Mon objectif est d’enrichir mes connaissances en création web et de développer des compétences techniques pour contribuer à la sécurité de l’information et à la protection des systèmes numériques.</p>
-            <div class="social-icons">
-                <a href="https://wa.me/message/VQN4ALXJA67ZB1"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="https://web.facebook.com/profile.php?id=100064609031736&locale=fr_FR"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://x.com/BasoKeson"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/repos"><i class="fa-brands fa-github"></i></a>
-            </div>
-            <a href="#" class="btn">Hire me</a>
-        </div>
-    </section>
 
-    <section id="services" class="services">
-        <h2 class="heading">Mes <span>Services</span></h2>
-        <div class="services-container">
-            <div class="service-box">
-                <i class="fa-solid fa-palette"></i>
-                <h3>Design Graphique</h3>
-                <p>Création d'affiches et supports visuels attrayants.</p>
+    <main>
+        <section id="home" class="home">
+            <div class="home-img">
+                <img src="img.png" alt="Portrait de Kévin N'DJA Baham">
             </div>
-            <div class="service-box">
-                <i class="fa-solid fa-chalkboard-teacher"></i>
-                <h3>Enseignement</h3>
-                <p>Transmission de connaissances en sciences de l'éducation.</p>
+            <div class="home-content">
+                <h1>Bonjour, je suis <span>Kévin</span></h1>
+                <h2 class="typing-text">Je suis <span></span></h2>
+                <p>
+                    Passionné par la technologie, le design et l'éducation, je développe des supports visuels utiles,
+                    des expériences web simples et des projets pédagogiques concrets.
+                </p>
+                <div class="social-icons">
+                    <a href="https://wa.me/message/VQN4ALXJA67ZB1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://web.facebook.com/profile.php?id=100064609031736&locale=fr_FR" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://x.com/BasoKeson" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/kevinndja" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="cta-row">
+                    <a href="#contact" class="btn">Me contacter</a>
+                    <a href="#projects" class="btn btn-secondary">Voir mes projets</a>
+                </div>
             </div>
-            <div class="service-box">
-                <i class="fa-solid fa-code"></i>
-                <h3>Développement Web Basique</h3>
-                <p>Création de sites web simples avec HTML et CSS.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="skills">
-        <h2 class="heading">Mes <span>Compétences</span></h2>
-        <div class="skills-container">
-            <div class="skill-box">
-                <h3>HTML</h3>
-                <div class="progress-bar"><div class="progress" style="width: 50%;"></div></div>
+        <section id="services" class="panel">
+            <h2 class="heading">Mes <span>Services</span></h2>
+            <div class="grid cards-3">
+                <article class="card">
+                    <i class="fa-solid fa-palette"></i>
+                    <h3>Design graphique</h3>
+                    <p>Création d'affiches, visuels social media et supports de communication.</p>
+                </article>
+                <article class="card">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <h3>Accompagnement éducatif</h3>
+                    <p>Conception de contenus pédagogiques clairs et adaptés au public.</p>
+                </article>
+                <article class="card">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Intégration web</h3>
+                    <p>Sites vitrines responsives en HTML, CSS et JavaScript.</p>
+                </article>
             </div>
-            <div class="skill-box">
-                <h3>CSS</h3>
-                <div class="progress-bar"><div class="progress" style="width: 45%;"></div></div>
-            </div>
-            <div class="skill-box">
-                <h3>Microsoft Office</h3>
-                <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-            </div>
-            <div class="skill-box">
-                <h3>Outils de Design</h3>
-                <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="languages" class="languages">
-        <h2 class="heading">Mes <span>Langues</span></h2>
-        <div class="languages-container">
-            <div class="language-box">
-                <h3>Français</h3>
-                <p>Langue maternelle</p>
+        <section id="skills" class="panel alt">
+            <h2 class="heading">Mes <span>Compétences</span></h2>
+            <div class="grid cards-2">
+                <article class="card skill-box">
+                    <h3>HTML</h3>
+                    <div class="progress-bar" aria-label="Niveau HTML 80%"><div class="progress" style="width:80%;"></div></div>
+                </article>
+                <article class="card skill-box">
+                    <h3>CSS</h3>
+                    <div class="progress-bar" aria-label="Niveau CSS 75%"><div class="progress" style="width:75%;"></div></div>
+                </article>
+                <article class="card skill-box">
+                    <h3>JavaScript</h3>
+                    <div class="progress-bar" aria-label="Niveau JavaScript 55%"><div class="progress" style="width:55%;"></div></div>
+                </article>
+                <article class="card skill-box">
+                    <h3>Design & outils bureautiques</h3>
+                    <div class="progress-bar" aria-label="Niveau Design 85%"><div class="progress" style="width:85%;"></div></div>
+                </article>
             </div>
-            <div class="language-box">
-                <h3>Anglais</h3>
-                <p>Notions de base</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects" class="projects">
-        <h2 class="heading">Mes <span>Projets</span></h2>
-        <div class="projects-container">
-            <div class="project-box">
-                <img src="https://via.placeholder.com/300x200/333/fff?text=Affiches" alt="Projet 1">
-                <h3>Affiches Publicitaires</h3>
-                <p>Création d'affiches pour événements locaux.</p>
-                <a href="#" class="btn">Voir le Projet</a>
+        <section id="projects" class="panel">
+            <h2 class="heading">Mes <span>Projets</span></h2>
+            <div class="grid cards-3">
+                <article class="card project-box">
+                    <img src="projetp.png" alt="Affiche publicitaire réalisée pour un événement local" class="zoomable">
+                    <h3>Affiches publicitaires</h3>
+                    <p>Conception d'affiches promotionnelles pour événements locaux.</p>
+                    <a href="projetp.png" class="btn" target="_blank" rel="noopener noreferrer">Agrandir</a>
+                </article>
+                <article class="card project-box">
+                    <img src="projetpot.png" alt="Deuxième création graphique" class="zoomable">
+                    <h3>Visuel promotionnel</h3>
+                    <p>Direction artistique et mise en page d'un support de communication.</p>
+                    <a href="projetpot.png" class="btn" target="_blank" rel="noopener noreferrer">Agrandir</a>
+                </article>
+                <article class="card project-box">
+                    <img src="pro.png" alt="Capture d'écran d'un projet web" class="zoomable">
+                    <h3>Site web éducatif</h3>
+                    <p>Développement d'un mini-site orienté contenus pédagogiques.</p>
+                    <a href="https://kevinndja.github.io/focus-edu/" target="_blank" rel="noopener noreferrer" class="btn">Voir le site</a>
+                </article>
             </div>
-            <div class="project-box">
-                <img src="https://via.placeholder.com/300x200/333/fff?text=Portfolio" alt="Projet 2">
-                <h3>Site Web Personnel</h3>
-                <p>Portfolio simple en HTML et CSS.</p>
-                <a href="#" class="btn">Voir le Projet</a>
-            </div>
-            <div class="project-box">
-                <img src="https://via.placeholder.com/300x200/333/fff?text=Supports" alt="Projet 3">
-                <h3>Supports Éducatifs</h3>
-                <p>Design de matériels pédagogiques.</p>
-                <a href="#" class="btn">Voir le Projet</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="education" class="education">
-        <h2 class="heading">Mon <span>Éducation</span></h2>
-        <div class="education-container">
-            <div class="education-box">
-                <h3>Bachelor en Sciences de l'Éducation</h3>
-                <p>Université de Kara-Togo, 2022-2025</p>
+        <section id="education" class="panel alt">
+            <h2 class="heading">Mon <span>Éducation</span></h2>
+            <div class="grid cards-3">
+                <article class="card">
+                    <h3>Licence en Sciences de l'Éducation</h3>
+                    <p>Université de Kara (Togo), 2022 - 2025</p>
+                </article>
+                <article class="card">
+                    <h3>Baccalauréat</h3>
+                    <p>Session juin 2022</p>
+                </article>
+                <article class="card">
+                    <h3>Formation en informatique</h3>
+                    <p>CF Le Leader, août - octobre 2022</p>
+                </article>
             </div>
-            <div class="education-box">
-                <h3>Baccalauréat</h3>
-                <p>Session juin 2022</p>
-            </div>
-            <div class="education-box">
-                <h3>Formation en Informatique</h3>
-                <p>CF Le Leader, 22 août - 22 octobre 2022</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="experience" class="experience">
-        <h2 class="heading">Mon <span>Expérience</span></h2>
-        <div class="experience-container">
-            <div class="experience-box">
-                <h3>Étudiant en Sciences de l'Éducation</h3>
-                <p>Université de Kara-Togo, 2022-2025</p>
-                <p>Apprentissage et transmission des connaissances pédagogiques.</p>
+        <section id="experience" class="panel">
+            <h2 class="heading">Mon <span>Expérience</span></h2>
+            <div class="grid cards-3">
+                <article class="card">
+                    <h3>Designer graphique freelance</h3>
+                    <p>Création de supports visuels pour clients et associations locales.</p>
+                </article>
+                <article class="card">
+                    <h3>Stage informatique</h3>
+                    <p>Initiation aux fondamentaux IT et bonnes pratiques numériques.</p>
+                </article>
+                <article class="card">
+                    <h3>Projet pédagogique</h3>
+                    <p>Conception de ressources éducatives adaptées à des besoins réels.</p>
+                </article>
             </div>
-            <div class="experience-box">
-                <h3>Stage de Formation en Informatique</h3>
-                <p>CF Le Leader, 22 août - 22 octobre 2022</p>
-                <p>Attestation de stage : acquisition de compétences de base en IT.</p>
-            </div>
-            <div class="experience-box">
-                <h3>Designer Graphique</h3>
-                <p>Freelance</p>
-                <p>Création d'affiches et supports visuels.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact">
-        <h2 class="heading">Me <span>Contacter</span></h2>
-        <div class="contact-info">
-            <p><strong>Téléphone :</strong> 93326388 / 79664863</p>
-            <p><strong>Email :</strong> bahamkevinsonn@gmail.com</p>
-            <p><strong>Adresse :</strong> Atteda Kara</p>
-        </div>
-        <form class="contact-form" id="contactForm">
-            <input type="text" name="name" placeholder="Votre Nom" required>
-            <input type="email" name="email" placeholder="Votre Email" required>
-            <textarea name="message" placeholder="Votre Message" required></textarea>
-            <button type="submit" class="btn">Envoyer</button>
-        </form>
-        <div id="formMessage" style="display: none; color: #b74b4b; margin-top: 1rem;"></div>
-    </section>
+        <section id="contact" class="panel alt contact">
+            <h2 class="heading">Me <span>Contacter</span></h2>
+            <div class="contact-info">
+                <p><strong>Téléphone:</strong> +228 93 32 63 88 / +228 79 66 48 63</p>
+                <p><strong>Email:</strong> <a href="mailto:bahamkevinsonn@gmail.com">bahamkevinsonn@gmail.com</a></p>
+                <p><strong>Adresse:</strong> Attiéda, Kara, Togo</p>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <input type="text" name="name" placeholder="Votre nom" required>
+                <input type="email" name="email" placeholder="Votre email" required>
+                <textarea name="message" placeholder="Votre message" required></textarea>
+                <button type="submit" class="btn">Envoyer</button>
+                <p id="formMessage" class="form-message" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Kévin. Tous droits réservés.</p>
+        <p>&copy; 2026 Kévin N'DJA Baham. Tous droits réservés.</p>
     </footer>
 
-    <!-- Modal for full screen image -->
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImg">
+    <div id="imageModal" class="modal" aria-hidden="true">
+        <button class="close" aria-label="Fermer l'image">&times;</button>
+        <img class="modal-content" id="modalImg" alt="Aperçu plein écran">
     </div>
 
     <script src="script.js"></script>
