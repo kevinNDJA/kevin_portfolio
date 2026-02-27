@@ -11,6 +11,16 @@ if (hamburger && nav) {
     });
 }
 
+function closeMobileMenu() {
+    if (!hamburger || !nav) {
+        return;
+    }
+
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    nav.classList.remove('active');
+}
+
 navLinks.forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
         e.preventDefault();
@@ -23,12 +33,34 @@ navLinks.forEach((anchor) => {
         navLinks.forEach((item) => item.classList.remove('active'));
         anchor.classList.add('active');
 
-        if (nav.classList.contains('active')) {
-            nav.classList.remove('active');
-            hamburger.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-        }
+        closeMobileMenu();
     });
+});
+
+document.addEventListener('click', (e) => {
+    if (!hamburger || !nav) {
+        return;
+    }
+
+    if (!nav.classList.contains('active')) {
+        return;
+    }
+
+    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+        closeMobileMenu();
+    }
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 860) {
+        closeMobileMenu();
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeMobileMenu();
+    }
 });
 
 const modal = document.getElementById('imageModal');
